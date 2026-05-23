@@ -1,0 +1,11 @@
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+
+chat_template = ChatPromptTemplate([
+    ('system','you are a helpful {domain} expert'),
+    ('human','Explain in simpler terms, what is {topic}'),
+])
+
+prompt=chat_template.invoke({'domain':'cricket','topic':'LPW'})
+
+print(prompt)
